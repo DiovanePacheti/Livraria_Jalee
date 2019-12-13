@@ -80,5 +80,32 @@ public class Livraria {
     private void adicionarAutorLivro(Livro livro){
         
     }//fim do method adicionar Autor Livro
+    private void adicionarCapituloLivro(Livro livro){
+        
+    }//fim do method adicionar capitulo livro
+    
+    private void removerLivro(){
+        
+    }//fim do metodo remover livro
+    
+    private void listarCapitulos(Livro livro){
+        
+    }//fim do method listar capitulos
+    
+    private void listarAcervo(){
+        
+    }// fim do method listar acervo
+    
+    private void resetarLivraria(){
+        
+    }// fim do method resetar livraria 
+    
+    private void modificarLivroDoAcervo(){
+        
+    }// fim do method modificar livro do acervo
+    
+    private void listarCapitulos(){
+        
+    }//fim do method listar capitulos
     
 }//fim da class

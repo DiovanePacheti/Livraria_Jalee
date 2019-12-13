@@ -71,4 +71,11 @@ public class Livro {
     
         return 0;    
     }
+
+    @Override
+    public String toString() {
+        return "Livro{" + "titulo=" + titulo + ", ISBN=" + ISBN + ", capitulos=" + capitulos + ", autores=" + autores + '}';
+    }
+    
+    
 }// fim da class Livro
