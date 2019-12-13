@@ -13,13 +13,30 @@ public class Livro {
     // == Atributos ==
     private String titulo = "";
     private String ISBN = "";
-    
+    private Capitulo[] capitulos;
+    private Autor[] autores;
     //== Construtor ==
     public Livro(String titulo, String ISBN){
         
     }
 
-    //== Methodos acessores ==
+    public Capitulo[] getCapitulos() {
+        return capitulos;
+    }
+
+    public void setCapitulos(Capitulo[] capitulos) {
+        this.capitulos = capitulos;
+    }
+
+    public Autor[] getAutores() {
+        return autores;
+    }
+
+    public void setAutores(Autor[] autores) {
+        this.autores = autores;
+    }
+
+    
     public String getTitulo() {
         return titulo;
     }
@@ -36,4 +53,22 @@ public class Livro {
         this.ISBN = ISBN;
     }
     
+    public int adicionarCapitulo(String titulo, String texto){
+    
+        return 0;
+    }//fim do method adicionar capitulo
+    
+    public int removerCapitulo(Capitulo capitulo){
+        
+        return 0;
+    }//fim do method remover capitulo
+    
+    public int adicionarAutor(Autor autor){
+        
+        return 0;
+    }
+    public int removerAutor(){
+    
+        return 0;    
+    }
 }// fim da class Livro

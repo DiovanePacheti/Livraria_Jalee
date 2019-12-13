@@ -27,8 +27,8 @@ public class Autor {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public LocalDate getDataDeNascimento(){
+   // public LocalDate getDataDeNascimento(){
         
-        return this.DataDeNascimento();
-    }
+     //   return this.DataDeNascimento();
+    //}
 }//fim da class Autor

@@ -64,9 +64,21 @@ public class Livraria {
         
     }//fim do method menu
     
-    private int cadastrarLivro(){
+    private static int cadastrarLivro(){
         
         return 0;
     }//fim do method cadastrarLivro
+    
+    private void cadastraAutores(Livro livro,int numeroDeAutores){
+        
+    }//fim do metodo cadastra Autores
+    
+    private void cadastraCapitulos(Livro livro,int numeroDeCapitulos){
+        
+    }//fim do method cadastra Capitulos
+    
+    private void adicionarAutorLivro(Livro livro){
+        
+    }//fim do method adicionar Autor Livro
     
 }//fim da class
