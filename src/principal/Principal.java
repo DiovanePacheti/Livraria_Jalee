@@ -5,12 +5,18 @@
  */
 package principal;
 
+import livraria.Livraria;
+
 /**
  *
  * @author dio-end
  */
 public class Principal {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        
+        Livraria novaLivraria = new Livraria();
+        
+        novaLivraria.menu();
         
     }//fim do method main
 }//fim da class Principal

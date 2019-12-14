@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package livraria;
+import java.util.Scanner;
 
 /**
  *
@@ -11,15 +12,17 @@ package livraria;
  */
 public class Livraria {
     
+    Scanner scan = new Scanner(System.in);  
+    
     public Livraria(){}//construtor da class
     
-    private void menu() throws InterruptedException{
+    public void menu() throws InterruptedException{
         int escolha = 0;
         do{
             System.out.println("+================================+");
             System.out.println("|        Livraria Jalee          |");
             System.out.println("+--------------------------------+");
-            System.out.println("| 1 - Cadastrar novo livro        |");
+            System.out.println("| 1 - Cadastrar novo livro       |");
             System.out.println("| 2 - Remover livro do acervo    |");
             System.out.println("| 3 - Listar acervo              |");
             System.out.println("| 4 - Resetar livraria           |");
@@ -27,7 +30,7 @@ public class Livraria {
             System.out.println("| 6 - Listar capitulos de livro  |");
             System.out.println("| 9 - Sair                       |");
             System.out.println("+--------------------------------+");
-            
+            escolha = scan.nextInt();
             try{
                // escolha = Util.leInteiro("Escolha uma opção: ");
                switch(escolha){
@@ -64,9 +67,27 @@ public class Livraria {
         
     }//fim do method menu
     
-    private static int cadastrarLivro(){
+    private int cadastrarLivro(){
         
-        return 0;
+        do{
+            System.out.print("Digite o título do livro : ");
+            String titulo = scan.next();
+            //leString("digite o titulo do livro : ");
+            System.out.print("Digite o ISBN : ");
+            String isbn = scan.next();
+            System.out.print("Digite o numero de autores a cadastrar :");
+            //criando um for para cadastrar mais de um autor
+            int numAutores = scan.nextInt();
+            Autor[] autores = new Autor[numAutores];
+            for(int i = 0; i < numAutores;i++){
+                System.out.print("Cadastro de Autor("+(i+1)+"/"+numAutores+")");
+                autores[i].setNome(scan.next());
+            }//fim do for
+            Livro novoLivro = new Livro(titulo, isbn);
+            novoLivro.toString();
+            return 0;
+        }while(true);
+        
     }//fim do method cadastrarLivro
     
     private void cadastraAutores(Livro livro,int numeroDeAutores){
