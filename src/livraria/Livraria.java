@@ -13,8 +13,9 @@ import java.util.Scanner;
 public class Livraria {
     
     Scanner scan = new Scanner(System.in);  
-    
+    Livro[] livros;
     public Livraria(){}//construtor da class
+    
     
     public void menu() throws InterruptedException{
         int escolha = 0;
@@ -54,6 +55,7 @@ public class Livraria {
                        break;
                    case 9:
                        break;
+                       
                    default:
                        System.err.println("Opção inválida!");
                }//fim switch case
@@ -68,7 +70,7 @@ public class Livraria {
     }//fim do method menu
     
     private int cadastrarLivro(){
-        
+        livros = new Livro[100];
         do{
             System.out.print("Digite o título do livro : ");
             String titulo = scan.next();

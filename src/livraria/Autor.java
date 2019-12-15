@@ -14,12 +14,22 @@ import java.time.LocalDate;
 public class Autor {
     
     private String nome = "";
-    
+    private LocalDate dataDeNascimento;
     
     public Autor(String nome){
         this.setNome(nome);
     }
 
+    public LocalDate getDataDeNascimento() {
+        return dataDeNascimento;
+    }
+
+    public void setDataDeNascimento(LocalDate dataDeNascimento) {
+        this.dataDeNascimento = dataDeNascimento;
+    }
+
+    
+    
     public String getNome() {
         return this.nome;
     }
@@ -27,8 +37,11 @@ public class Autor {
     public void setNome(String nome) {
         this.nome = nome;
     }
-   // public LocalDate getDataDeNascimento(){
-        
-     //   return this.DataDeNascimento();
-    //}
+
+    @Override
+    public String toString() {
+        return "Autor{" + "nome=" + nome + ", dataDeNascimento=" + dataDeNascimento + '}';
+    }
+   
+    
 }//fim da class Autor
