@@ -17,14 +17,15 @@ public class Livro {
     private Autor[] autores;
     //== Construtor ==
     public Livro(String titulo, String ISBN){
-        
+        this.setTitulo(titulo);
+        this.setISBN(ISBN);
     }
 
     public Capitulo[] getCapitulos() {
         return capitulos;
     }
 
-    public void setCapitulos(Capitulo[] capitulos) {
+    public  void setCapitulos(Capitulo[] capitulos) {
         this.capitulos = capitulos;
     }
 

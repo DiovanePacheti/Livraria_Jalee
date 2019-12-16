@@ -20,6 +20,8 @@ public class Autor {
         this.setNome(nome);
     }
 
+  
+
     public LocalDate getDataDeNascimento() {
         return dataDeNascimento;
     }

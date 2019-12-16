@@ -21,7 +21,7 @@ public class Capitulo {
     public Capitulo(String titulo,String texto){
         this.setTexto(texto);
         this.setTitulo(titulo);
-    }//fim do construtor
+    }//fim do construtor 
 
     @Override
     public int hashCode() {

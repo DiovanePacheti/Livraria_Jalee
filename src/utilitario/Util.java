@@ -6,20 +6,25 @@
 package utilitario;
 
 import java.time.LocalDate;
-
+import java.util.Scanner;
 /**
  *
  * @author dio-end
  */
 public class Util {
+    
+    Scanner scan = new Scanner(System.in); 
+    
     public int leInteiro(String mensagem){
+        String texto = mensagem;
         
         return 0;
     }//fim do method li inteiro
     
     public String leString(String mensagem){
+        String texto = mensagem;
         
-        return "";
+        return scan.next();
     }//fim do method le string
     
     
