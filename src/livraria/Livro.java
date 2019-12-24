@@ -19,6 +19,7 @@ public class Livro {
     public Livro(String titulo, String ISBN){
         this.setTitulo(titulo);
         this.setISBN(ISBN);
+        capitulos = new Capitulo[100];
     }
 
     public Capitulo[] getCapitulos() {
@@ -65,7 +66,7 @@ public class Livro {
     }//fim do method remover capitulo
     
     public int adicionarAutor(Autor autor){
-        
+        //for(int i = 0;i < autores.le )
         return 0;
     }
     public int removerAutor(){

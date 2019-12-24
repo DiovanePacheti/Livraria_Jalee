@@ -16,7 +16,7 @@ public class Principal {
         
         Livraria novaLivraria = new Livraria();
         
-        novaLivraria.menu();
+        
         
     }//fim do method main
 }//fim da class Principal
