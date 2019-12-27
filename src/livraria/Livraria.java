@@ -184,11 +184,28 @@ public class Livraria {
     }//fim do metodo remover livro
     
     private void listarCapitulos(Livro livro){
-        
+        Capitulo[] capitulos = livro.getCapitulos();
+        for(int i = 0; i < capitulos.length; i++){
+            if(capitulos[i] != null){
+                  System.out.printf("Capitulo %d - %s\n",i+1,capitulos[i]);
+            }//fim do if
+        }//fim do for
+    }
+    
+    private void listarCapitulos(){
+ 
+       listarAcervo();
+       int idDoLivro = Util.leInteiro("Digite id do livro que deseja ver os capitulos: ");
+       listarCapitulos(livros[idDoLivro]);
     }//fim do method listar capitulos
     
     private void listarAcervo(){
-        
+        for (int i = 0; i < livros.length; i++) {
+            if(livros[i] != null){
+                System.out.printf("[%d] %s",i, livros[i] +"\n");
+            }//fim do if
+        }//fim do for
+ 
     }// fim do method listar acervo
     
     private void resetarLivraria(){
