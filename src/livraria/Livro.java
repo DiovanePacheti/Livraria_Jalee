@@ -10,24 +10,26 @@ package livraria;
  * @author dio-end
  */
 public class Livro {
+
     // == Atributos ==
     private String titulo = "";
     private String ISBN = "";
     private Capitulo[] capitulos;
     private Autor[] autores;
+
     //== Construtor ==
-    public Livro(String titulo, String ISBN){
+    public Livro(String titulo, String ISBN) {
         this.setTitulo(titulo);
         this.setISBN(ISBN);
         capitulos = new Capitulo[100];
-        autores = new Autor[100];
+        autores = new Autor[6];
     }
 
     public Capitulo[] getCapitulos() {
         return capitulos;
     }
 
-    public  void setCapitulos(Capitulo[] capitulos) {
+    public void setCapitulos(Capitulo[] capitulos) {
         this.capitulos = capitulos;
     }
 
@@ -35,11 +37,15 @@ public class Livro {
         return autores;
     }
 
-    public void setAutores(Autor[] autores) {
-        this.autores = autores;
+    public void setAutores(Autor autor) {
+        for (int i = 0; i < autores.length; i++) {
+            if (autores[i] == null) {
+                autores[i] = autor;
+
+            }
+        }
     }
 
-    
     public String getTitulo() {
         return titulo;
     }
@@ -55,35 +61,66 @@ public class Livro {
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
-    
-    public int adicionarCapitulo(String titulo, String texto){
-    
-        return 0;
+
+    public int adicionarCapitulo(String titulo, String texto) {
+        for (int i = 0; i < capitulos.length; i++) {
+
+            if (capitulos[i] == null) { //se capitulos na posiçao i for igual a null 
+                capitulos[i].setTitulo(titulo); //setando o titulo no caputilo na posição i
+                capitulos[i].setTexto(texto);// setando o texto 
+                break;
+            }
+            return i;
+        }
+        return -1;
     }//fim do method adicionar capitulo
-    
-    public int removerCapitulo(Capitulo capitulo){
-        
+
+    public int removerCapitulo(Capitulo capitulo) {
+        for (int i = 0; i < capitulos.length; i++) {
+            if(capitulos[i].equals(capitulo)){
+                capitulos[i] = null;
+            }//fim do if
+        }
         return 0;
     }//fim do method remover capitulo
-    
-    public int adicionarAutor(Autor autor){
-        for(int i = 0; i < autores.length; i++){
-            if(autores[i] == null){
+
+    public int adicionarAutor(Autor autor) {
+        for (int i = 0; i < autores.length; i++) {
+            if (autores[i] == null) {
+                
                 autores[i] = autor;
-                return i;
+                System.out.println(autores[i].toString());
+                break;
+
             }
+            return i;
         }
         return -1;
     }
-    public int removerAutor(Autor autor){
-    
-        return 0;    
+
+    public int removerAutor(Autor autor) {
+        for (int i = 0; i < autores.length; i++) {
+            if(autores[i].equals(autor)){
+                autores[i] = mull;
+            }
+        }
+        return 0;
     }
 
     @Override
     public String toString() {
-        return "Livro{" + "titulo=" + titulo + ", ISBN=" + ISBN + ", capitulos=" + capitulos + ", autores=" + autores + '}';
+        String s = " ";
+        s += "Livro";
+        s += "\nTitulo = " + this.getTitulo();
+        s += "\nISBN = " + this.getISBN();
+        s += "\nCapitulos = ";//+ this.getCapitulos();
+        s += "\nAutores : ";//+ this.getAutores();
+        for (Autor aut : autores) {
+            s += aut.toString() + "\n";
+        }
+
+        //  s += "\nAutores = " + this.getAutores();
+        return s;
     }
-    
-    
+
 }// fim da class Livro

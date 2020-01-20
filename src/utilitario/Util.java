@@ -16,14 +16,12 @@ public class Util {
     Scanner scan = new Scanner(System.in); 
     
     public int leInteiro(String mensagem){
-        String texto = mensagem;
-        
-        return 0;
+        System.out.println(mensagem);
+        return scan.nextInt();
     }//fim do method li inteiro
     
     public String leString(String mensagem){
-        String texto = mensagem;
-        
+        System.out.print(mensagem);
         return scan.next();
     }//fim do method le string
     

@@ -42,8 +42,14 @@ public class Autor {
 
     @Override
     public String toString() {
-        return "Autor{" + "nome=" + nome + ", dataDeNascimento=" + dataDeNascimento + '}';
+        return "---------- Autor --------------\n"
+             + "Nome : " + getNome()
+             + "\nDataDeNascimento : " + getDataDeNascimento();
     }
+    
+    /*  return "---------- Capitulo -----------\n" + 
+                "Titulo :" + this.getTitulo() + 
+                "Texto :" + this.getTexto()  ;*/
    
     
 }//fim da class Autor
