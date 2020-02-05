@@ -13,7 +13,19 @@ import livraria.Livraria;
  */
 public class Principal {
     public static void main(String[] args) throws InterruptedException {
-        
+        /***
+         * Algoritmos e Programação II
+           Professor Ângelo Gonçalves da Luz
+           Roteiro 0
+	
+           Objetivos
+
+           Este roteiro busca integrar conhecimentos obtidos 
+           na unidade curricular de Algoritmos I e Lógica de 
+           Programação, com a utilização de arrays para armazenar 
+           os dados cadastrados na execução da aplicação desenvolvida.
+	
+         */
 
         Livraria novaLivraria = new Livraria();
         

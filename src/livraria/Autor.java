@@ -7,6 +7,13 @@ import java.time.LocalDate;
 /**
  *
  * @author dio-end
+ * 
+ * Desenvolver uma classe Autor. que possui 
+ * um nome e data de nascimento (do tipo LocalDate). 
+ * O construtor deve forçar o 	preenchimento do nome 
+ * do Autor. As regras de encapsulamento e boas 
+ * práticas devem ser aplicadas para todas as 
+ * classes deste projeto.
  */
 
 public class Autor {

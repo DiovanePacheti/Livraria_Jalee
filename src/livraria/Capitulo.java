@@ -6,6 +6,13 @@ import java.util.Objects;
 /**
  *
  * @author dio-end
+ * 
+ * Desenvolver uma classe Capítulo, 
+ * que representa um Capítulo de um 	
+ * livro. Esse capítulo possui um título 
+ * e um texto. Deve possuir 	
+ * dois construtores, um vazio e um que 
+ * force no título e o texto.
  */
 public class Capitulo {
 

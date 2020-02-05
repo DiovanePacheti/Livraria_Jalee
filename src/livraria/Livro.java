@@ -5,6 +5,13 @@ package livraria;
 /**
  *
  * @author dio-end
+ * 
+ * Desenvolver uma classe Livro, que possui 
+ * um título, um ISBN, vários capítulos e um 
+ * ou vários autores. O construtor deve obrigar 
+ * o preenchimento do título e do ISBN do livro. 
+ * Esta classe deve possuir alguns métodos além 
+ * dos métodos tradicionais, e são eles: 
  */
 public class Livro {
 
@@ -71,7 +78,16 @@ public class Livro {
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
-
+    /**
+     * adicionarCapitulo - que receberá por parâmetro o título e o texto
+     * do capítulo, e retornar um inteiro com a posição do array de 
+     * capítulos onde o capítulo foi inserido, ou -1, caso não tenha sido 
+     * possível inserir. Considere que um livro possui no máximo 100 capítulos.
+     * 
+     * @param titulo
+     * @param texto
+     * @return 
+     */
     public int adicionarCapitulo(String titulo, String texto) {
         for (int i = 0; i < capitulos.length; i++) {
 
@@ -84,7 +100,14 @@ public class Livro {
         }
         return -1;
     }//fim do method adicionar capitulo
-
+    
+    /** 
+     * removerCapitulo - que recebe por parâmetro um Capítulo, e remove o
+     * mesmo do array de capítulos. Retornando a posição do array onde 
+     * estava o Capítulo ou -1 caso o capítulo não for encontrado.
+     * @param capitulo
+     * @return 
+     */
     public int removerCapitulo(Capitulo capitulo) {
         for (int i = 0; i < capitulos.length; i++) {
             if(capitulos[i].equals(capitulo)){
@@ -94,7 +117,17 @@ public class Livro {
         }
         return -1;
     }//fim do method remover capitulo
-
+    
+    /**
+     * adicionarAutor - recebe por parâmetro 
+     * um Autor e o adiciona no array de autores, 
+     * retornando a posição do array onde o autor 
+     * foi inserido ou -1 caso não tenha sido 
+     * possível inseri-lo. Considere que um 
+     * livro possa possuir no máximo 6 autores.
+     * @param autor
+     * @return 
+     */
     public int adicionarAutor(Autor autor) {
         for (int i = 0; i < autores.length; i++) {
             if (autores[i] == null) {
@@ -107,7 +140,14 @@ public class Livro {
         }
         return -1;
     }
-
+    /**
+     * removerAutor - que recebe por parâmetro 
+     * um Autor e o remove do 	array de autores, 
+     * retornando a posição onde estava o autor ou -1 	
+     * caso não tenha sido possível remover.
+     * @param autor
+     * @return 
+     */
     public int removerAutor(Autor autor) {
         for (int i = 0; i < autores.length; i++) {
             if(autores[i].equals(autor)){

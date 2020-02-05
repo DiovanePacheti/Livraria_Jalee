@@ -8,6 +8,12 @@ import utilitario.Util;
 
 /**
  * @author dio-end
+ * 
+ * Desenvolver uma classe Livraria, que será 
+ * a classe que conterá toda a entrada e saída 
+ * de dados, essa classe deve possuir um array 
+ * de Livros, e vários métodos privados para 
+ * melhor organizar o código, tais como: 
  */
 public class Livraria {
 
@@ -80,6 +86,15 @@ public class Livraria {
 
     }//fim do method menu
 
+    /**
+     * cadastrarLivro - que cadastra um novo 
+     * livro e retorna a posição que este foi 
+     * inserido ou -1 caso não possa ser cadastrado. 
+     * Considere que a livraria pode conter até 500 livros. 
+     * Deverá utilizar os métodos “cadastrarAutores” e “cadastrarCapitulos”, 	
+     * descritos a seguir.
+     * @return 
+     */
     private int cadastrarLivro() {
         int retornandoNumeroPosicao = -1;
         String titulo = util.leString("digite o titulo do livro : ");
@@ -113,6 +128,17 @@ public class Livraria {
         return -1;
     }//fim do method cadastrarLivro ==========================================================================
 
+    /**
+     * cadastrarAutores – que é um método auxiliar que será 
+     * utilizado pelo “cadastrarLivro”, centralizando as 
+     * informações referentes ao cadastro de autor. Este receberá 
+     * como parâmetro um livro e o número de autores que será 
+     * cadastrado. Esse método irá cadastrar valores em um dos 
+     * livros já cadastrados na livraria, que deve ser 	
+     * selecionado previamente. 
+     * @param livro
+     * @param numeroDeAutores 
+     */
     private void cadastraAutores(Livro livro, int numeroDeAutores) {
         String nome;
         for (int i = 0; i < livros.length; i++) {
@@ -139,7 +165,14 @@ public class Livraria {
         }//fim do for
 
     }//fim do metodo cadastra Autores
-
+    
+    /**
+     * CadastrarCapitulos - deve funcionar 
+     * da mesma forma que o “cadastrarAutores”, 
+     * porém com a funcionalidade voltada para Capítulos. 
+     * @param livro
+     * @param numeroDeCapitulos 
+     */
     private void cadastraCapitulos(Livro livro, int numeroDeCapitulos) {
         for (int i = 0; i < livros.length; i++) {
             if (livros[i].equals(livro)) {
@@ -155,8 +188,11 @@ public class Livraria {
         }
     }//fim do method cadastra Capitulos
 
+    /**
+     *adicionarAutorLivro - Funciona da mesma forma que o “adicionarCapituloLivro. 
+     * @param livro 
+     */
     private void adicionarAutorLivro(Livro livro) {
-        /*=============  adicionarAutorLivro ======*/
         for (int i = 0; i < livros.length; i++) {
             if (livros[i].equals(livro)) {
                 String nome = util.leString("Você ira inserir un novo nome de um autor do livro " + livros[i].getTitulo() + " : ");
@@ -178,9 +214,15 @@ public class Livraria {
             }
         }
     }//fim do method adicionar Autor Livro
-
+    
+    /**
+     * adicionarCapituloLivro - deve receber por parâmetro 
+     * um livro, que será um livro selecionado previamente 
+     * dos livros já cadastrados e irá inserir novos 
+     * capítulos neste livro
+     * @param livro 
+     */
     private void adicionarCapituloLivro(Livro livro) {
-        /* ============= adicionarCapituloLivro =======*/
         for (int i = 0; i < livros.length; i++) {
             if (livros[i].equals(livro)) {
                 String tituloCapitulo = util.leString("Digite o titulo do capítulo : ");
@@ -191,7 +233,13 @@ public class Livraria {
             }
         }
     }//fim do method adicionar capitulo livro
-
+    
+    /**
+     * removerLivro - Deverá remover um livro da livraria. 
+     * Ver Figura 4. Além do funcionamento visto, em todos
+     * os casos podem ser utilizadas mensagens de 
+     * confirmação das ações selecionadas
+     */
     private void removerLivro() {
         for (int i = 0; i < livros.length; i++) {
             if (livros[i] != null) {
@@ -205,6 +253,12 @@ public class Livraria {
 
     }//fim do metodo remover livro
 
+    /**
+     * listarCapitulos - Deve receber um 
+     * livro por parâmetro e listar os títulos 
+     * dos capítulos do mesmo
+     * @param livro 
+     */
     private void listarCapitulos(Livro livro) {
         Capitulo[] capitulos = livro.getCapitulos();
         for (int i = 0; i < capitulos.length; i++) {
@@ -213,14 +267,30 @@ public class Livraria {
             }//fim do if
         }//fim do for
     }// fim do method listar
-
+    
+    /**
+     * listarCapitulos - que será utilizado 
+     * apenas para fazer a descoberta do livro 
+     * que deve ser utilizado. Após a descoberta, 
+     * o “listarCapitulos” descrito a seguir deve 
+     * ser invocado.
+     */
     private void listarCapitulos() {
 
-        listarAcervo();
+        for (int i = 0; i < livros.length; i++) {
+            if (livros[i] != null) {
+                System.out.println(i + "º " + livros[i].getTitulo());
+            }
+        }
         int idDoLivro = util.leInteiro("Digite id do livro que deseja ver os capitulos: ");
         listarCapitulos(livros[idDoLivro]);
     }//fim do method listar capitulos
 
+    /**
+     * listarAcervo - Deverá apresentar todas 
+     * as obras cadastradas. Mostrando também 
+     * a posição em que ela se encontra no array. 
+     */
     private void listarAcervo() {
         System.out.println("+======== Acervo livraria Jalee ========+\n" +
                 "|                                       |");
@@ -232,6 +302,9 @@ public class Livraria {
 
     }// fim do method listar acervo
 
+    /**
+     * resetarLivraria - remover todos os livros cadastrados
+     */
     private void resetarLivraria() {
         for (int i = 0; i < livros.length; i++) {
             if (livros[i] != null) {
@@ -242,9 +315,20 @@ public class Livraria {
             }
         }
     }// fim do method resetar livraria
-
+    
+    /**
+     * modificarLivroDoAcervo - Deverá dar duas opções 
+     * ao usuário: Adicionar Autor a um livro ou 
+     * adicionar capítulo. Após a escolha, deverá ser 
+     * utilizado um dos métodos descritos a seguir, 
+     * “adicionarAutorLivro” ou “adicionarCapituloLivro”. 
+     */
     private void modificarLivroDoAcervo() {
-        listarAcervo();
+        for (int i = 0; i < livros.length; i++) {
+            if (livros[i] != null) {
+                System.out.println(i + "º " + livros[i].getTitulo());
+            }
+        }
         int idLivro = util.leInteiro("Digite o id do livro : ");
 
         System.out.println();
