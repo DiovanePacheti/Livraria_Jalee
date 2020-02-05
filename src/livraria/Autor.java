@@ -46,10 +46,5 @@ public class Autor {
              + "Nome : " + getNome()
              + "\nDataDeNascimento : " + getDataDeNascimento();
     }
-    
-    /*  return "---------- Capitulo -----------\n" + 
-                "Titulo :" + this.getTitulo() + 
-                "Texto :" + this.getTexto()  ;*/
-   
-    
+  
 }//fim da class Autor

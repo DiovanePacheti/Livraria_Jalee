@@ -15,7 +15,7 @@ public class Livro {
     private String titulo = "";
     private String ISBN = "";
     private Capitulo[] capitulos;
-    private Autor[] autores;
+    private final Autor[] autores;
 
     //== Construtor ==
     public Livro(String titulo, String ISBN) {
@@ -34,15 +34,26 @@ public class Livro {
     }
 
     public Autor[] getAutores() {
-        return autores;
+          /*
+        for(int i = 0 ; i < autores.length; i++){
+            
+        }
+        return autores;*/
+          for(Autor a : autores){
+             
+          }
+          return autores;
     }
 
     public void setAutores(Autor autor) {
+        System.out.println("Entrando no setAutores metodo da class Livro");
         for (int i = 0; i < autores.length; i++) {
             if (autores[i] == null) {
+                System.out.println(autor.getNome());
                 autores[i] = autor;
-
+                break;
             }
+            System.out.println("fora do if que verifica se o array de autores esta vazio ");
         }
     }
 
@@ -80,8 +91,9 @@ public class Livro {
             if(capitulos[i].equals(capitulo)){
                 capitulos[i] = null;
             }//fim do if
+            return i;
         }
-        return 0;
+        return -1;
     }//fim do method remover capitulo
 
     public int adicionarAutor(Autor autor) {
@@ -89,7 +101,6 @@ public class Livro {
             if (autores[i] == null) {
                 
                 autores[i] = autor;
-                System.out.println(autores[i].toString());
                 break;
 
             }
@@ -101,10 +112,11 @@ public class Livro {
     public int removerAutor(Autor autor) {
         for (int i = 0; i < autores.length; i++) {
             if(autores[i].equals(autor)){
-                autores[i] = mull;
+                autores[i] = null;
             }
+            return i;
         }
-        return 0;
+        return -1;
     }
 
     @Override
@@ -114,7 +126,6 @@ public class Livro {
         s += "\nTitulo = " + this.getTitulo();
         s += "\nISBN = " + this.getISBN();
         s += "\nCapitulos = ";//+ this.getCapitulos();
-        s += "\nAutores : ";//+ this.getAutores();
         for (Autor aut : autores) {
             s += aut.toString() + "\n";
         }
