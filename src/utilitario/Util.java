@@ -16,7 +16,7 @@ public class Util {
     Scanner scan = new Scanner(System.in); 
     
     public int leInteiro(String mensagem){
-        System.out.println(mensagem);
+        System.out.print(mensagem);
         return scan.nextInt();
     }//fim do method li inteiro
     

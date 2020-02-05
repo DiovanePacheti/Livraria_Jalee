@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package livraria;
 
 import java.util.Objects;
@@ -12,16 +8,16 @@ import java.util.Objects;
  * @author dio-end
  */
 public class Capitulo {
-    
+
     private String titulo = "";
     private String texto = "";
-    
+
     public Capitulo(){ /* construtor vazio*/}
-    
+
     public Capitulo(String titulo,String texto){
         this.setTexto(texto);
         this.setTitulo(titulo);
-    }//fim do construtor 
+    }//fim do construtor
 
     @Override
     public int hashCode() {
@@ -52,8 +48,8 @@ public class Capitulo {
         return true;
     }
 
-    
-    
+
+
     public String getTitulo() {
         return titulo;
     }
@@ -72,11 +68,11 @@ public class Capitulo {
 
     @Override
     public String toString() {
-        return "---------- Capitulo -----------\n" + 
-                "Titulo :" + this.getTitulo() + 
-                "Texto :" + this.getTexto()  ;
+        return
+                "\n| Titulo :" + this.getTitulo() +
+                        "\n| Texto :" + this.getTexto()  ;
     }
-    
-    
-    
+
+
+
 }//fim da class Capitulo

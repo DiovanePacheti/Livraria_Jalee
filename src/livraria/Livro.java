@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package livraria;
+
 
 /**
  *
@@ -15,7 +12,7 @@ public class Livro {
     private String titulo = "";
     private String ISBN = "";
     private Capitulo[] capitulos;
-    private final Autor[] autores;
+    private Autor[] autores;
 
     //== Construtor ==
     public Livro(String titulo, String ISBN) {
@@ -29,31 +26,33 @@ public class Livro {
         return capitulos;
     }
 
-    public void setCapitulos(Capitulo[] capitulos) {
-        this.capitulos = capitulos;
+    public void setCapitulos(Capitulo capitulo) {
+        for (int i = 0; i < capitulos.length; i++) {
+            if (capitulos[i] == null) {
+
+                capitulos[i] = capitulo;
+
+                break;
+            }
+        }
+
+
     }
 
     public Autor[] getAutores() {
-          /*
-        for(int i = 0 ; i < autores.length; i++){
-            
+
+        for(Autor a : autores){
+
         }
-        return autores;*/
-          for(Autor a : autores){
-             
-          }
-          return autores;
+        return autores;
     }
 
     public void setAutores(Autor autor) {
-        System.out.println("Entrando no setAutores metodo da class Livro");
         for (int i = 0; i < autores.length; i++) {
             if (autores[i] == null) {
-                System.out.println(autor.getNome());
                 autores[i] = autor;
                 break;
             }
-            System.out.println("fora do if que verifica se o array de autores esta vazio ");
         }
     }
 
@@ -76,9 +75,9 @@ public class Livro {
     public int adicionarCapitulo(String titulo, String texto) {
         for (int i = 0; i < capitulos.length; i++) {
 
-            if (capitulos[i] == null) { //se capitulos na posiçao i for igual a null 
+            if (capitulos[i] == null) { //se capitulos na posiçao i for igual a null
                 capitulos[i].setTitulo(titulo); //setando o titulo no caputilo na posição i
-                capitulos[i].setTexto(texto);// setando o texto 
+                capitulos[i].setTexto(texto);// setando o texto
                 break;
             }
             return i;
@@ -99,7 +98,7 @@ public class Livro {
     public int adicionarAutor(Autor autor) {
         for (int i = 0; i < autores.length; i++) {
             if (autores[i] == null) {
-                
+                setAutores(autor);
                 autores[i] = autor;
                 break;
 
@@ -122,15 +121,20 @@ public class Livro {
     @Override
     public String toString() {
         String s = " ";
-        s += "Livro";
-        s += "\nTitulo = " + this.getTitulo();
-        s += "\nISBN = " + this.getISBN();
-        s += "\nCapitulos = ";//+ this.getCapitulos();
-        for (Autor aut : autores) {
-            s += aut.toString() + "\n";
-        }
-
-        //  s += "\nAutores = " + this.getAutores();
+        s += "\n| Titulo = " + this.getTitulo();
+        s += "\n| ISBN = " + this.getISBN();
+        s += "\n+-------------- Autor(s) \n";
+        for (int i = 0; i < autores.length; i++) {
+            if (autores[i] != null) {
+                s +="| " + autores[i].toString() + "\n";
+            }//fim do if
+        }//fim do for
+        s += "+------------- Capitulos ";
+        for (int i = 0; i < capitulos.length; i++) {
+            if (capitulos[i] != null) {
+                s += capitulos[i].toString() + "\n";
+            }//fim do if
+        }//fim do for
         return s;
     }
 
